@@ -169,7 +169,6 @@ for loan in loans:
         inexpensive_loans.append(loan)
 
 # @TODO: Print the `inexpensive_loans` list
-print(inexpensive_loans)
 print(f"The inexpensive loans include {inexpensive_loans}.")
                
 
@@ -193,12 +192,12 @@ Output this list of inexpensive loans to a csv file
 # Set the output header
 header = ["loan_price", "remaining_months", "repayment_interval", "future_value"]
 
-csvpath = Path("inexpensive_loans.csv")
-with open(csvpath, "w", newline = "") as csvfile:
+output_path = Path("inexpensive_loans.csv")
+with open(output_path, "w", newline = "") as csvfile:
     csvwriter = csv.writer(csvfile)
     csvwriter.writerow(header)
     for row in inexpensive_loans:
-       csvwriter.writerow(loan.values())
+       csvwriter.writerow(row.values())
 
     
 
